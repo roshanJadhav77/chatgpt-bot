@@ -12,14 +12,14 @@ Follow me on:
 🐙 [GitHub](https://github.com/roshanJadhav77)
 
 
-## ✅ Requirements
+## 1. ✅ Requirements
 
     - Java 17 or higher
     - Maven 3.6+
     - OpenAI API Key (Get yours at https://platform.openai.com/api-keys)
     - Internet connection to call OpenAI API
 
----
+----
 
 ## 📁 Project Structure
 
@@ -35,19 +35,26 @@ Follow me on:
     │ └── application.properties
     └── pom.xml
 
-##  🛠️ Build the project
+##  2. 🛠️ Build the project
     mvn clean install
 
-##  ▶️ Run the Application
+##  3. ▶️ Run the Application
     mvn spring-boot:run
 The application will start on http://localhost:8080
 
-## 📑 API Documentation and Testing with Swagger UI
+## 4. 📑 API Documentation and Testing with Swagger UI
 Swagger UI is integrated and available at:
 
     http://localhost:8080/swagger-ui/index.html
 
 Use this UI to test the API endpoint easily without any external tools.
+
+## 5. 📑 Postman curl 
+    curl --location 'http://localhost:8080/api/chat' \
+    --header 'Content-Type: application/json' \
+    --data '{
+    "prompt" : "WHo is PM of India"
+    }'
 
 ## 🔗 API Endpoint
     POST /api/chat

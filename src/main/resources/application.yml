@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: chatgpt-bot
+
+openai:
+  model: gpt-4o-mini
+  api-url: https://api.openai.com/v1/chat/completions
+  api-key: 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
+
+server:
+  port : 8080
+
+logging:
+  level:
+    root: DEBUG

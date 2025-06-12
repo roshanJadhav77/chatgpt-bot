@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat with RJ-Bot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1 class="animated-title">💬 Chat with <span class="bot-name">RJBot 🤖</span></h1>
+    <p class="subtitle">Created by <strong>Roshan 👨‍💻</strong></p>
+</header>
+
+<div id="controls" class="controls">
+    <button id="clearButton" onclick="clearChat()">🧹 Clear Chat</button>
+    <button id="darkModeToggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+</div>
+
+<div id="chatContainer"></div>
+
+<div id="inputArea">
+    <input type="text" id="promptInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+    <button onclick="sendPrompt()">Send</button>
+</div>
+
+<script src="js/chat.js"></script>
+</body>
+</html>

@@ -40,7 +40,8 @@ Follow me on:
 
 ##  3. ▶️ Run the Application
     mvn spring-boot:run
-The application will start on http://localhost:8080
+The application will start on http://localhost:8080/index.html.
+UI page will open and enjoy the show...
 
 ## 4. 📑 API Documentation and Testing with Swagger UI
 Swagger UI is integrated and available at:

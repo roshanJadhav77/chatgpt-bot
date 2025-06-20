@@ -102,3 +102,10 @@ Use this UI to test the API endpoint easily without any external tools.
 #### Step 4: Stop a Model 
     ollama stop
 
+#### Backend api Curl 
+    curl --location 'http://localhost:8080/api/ollamai/chat' \
+    --header 'Content-Type: application/json' \
+    --data '{
+    "model": "llama3.2",
+    "prompt": "2*2?"
+    }'

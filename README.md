@@ -83,3 +83,22 @@ Use this UI to test the API endpoint easily without any external tools.
     Parses the response to extract ChatGPT's answer
     
     Supports dynamic model configuration (gpt-4o-mini, gpt-3.5-turbo, etc.)
+
+## 🤖 Ollama AI Integration Details
+#### 💻 Option A: One-liner using Terminal
+    curl -fsSL https://ollama.com/install.sh | sh
+
+#### 💻 Option B: Download from website (GUI)
+    Go to:
+    👉 https://ollama.com/download
+    Download the .dmg file, install as a regular Mac app.
+
+#### Step 2: Verify Installation
+    ollama --version
+
+#### Step 3: Run a Model
+    ollama run llama3
+
+#### Step 4: Stop a Model 
+    ollama stop
+

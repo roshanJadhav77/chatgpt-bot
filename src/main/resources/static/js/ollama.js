@@ -77,3 +77,39 @@ function clearChat() {
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
 }
+
+// ✅ 🎙️ Voice Input
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = SpeechRecognition ? new SpeechRecognition() : null;
+
+if (recognition) {
+    recognition.lang = 'en-IN';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        input.value = transcript;
+        sendPrompt();
+    };
+
+    recognition.onerror = (event) => {
+        alert("Voice input error: " + event.error);
+    };
+
+    // 🎙️ Add mic button to input area
+    const micButton = document.createElement("button");
+    micButton.innerText = "🎙️";
+    micButton.style.marginLeft = "5px";
+    micButton.style.borderRadius = "10px";
+    micButton.style.cursor = "pointer";
+    micButton.title = "Speak your message";
+    micButton.onclick = () => recognition.start();
+
+    const inputArea = document.getElementById("inputArea");
+    inputArea.appendChild(micButton);
+} else {
+    console.warn("SpeechRecognition API not supported in this browser.");
+}
+
+

@@ -2,7 +2,6 @@ package com.chatgpt.chatgpt_bot.service;
 
 import com.chatgpt.chatgpt_bot.dto.ChatRequest;
 import com.chatgpt.chatgpt_bot.dto.ChatResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -43,7 +42,7 @@ public class ChatService {
 
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(body, headers);
 
-        ChatResponse chatResponse = new ChatResponse();
+        //ChatResponse chatResponse = new ChatResponse();
 
         ResponseEntity<Map> response = restTemplate.postForEntity(url, entity, Map.class);
         Map responseBody = response.getBody();
@@ -54,11 +53,11 @@ public class ChatService {
                 Map<String, Object> messageResp = (Map<String, Object>) firstChoice.get("message");
                 if(messageResp != null && messageResp.containsKey("content")){
                     String content = (String )messageResp.get("content");
-                    chatResponse.setReply(content);
+                    return ChatResponse.builder().reply(content).build();
                 }
             }
         }
-        return chatResponse;
+        return ChatResponse.builder().reply("No response from model").build();
     }
 
     private HashMap<String, Object> formRequestBody(ChatRequest request) {
